@@ -9,6 +9,8 @@ const controlSearch = async() => {
   const query = searchView.getInput();
   if(query){
     state.search = new Search(query);
+    searchView.clearInput();
+    searchView.clearResults();
     await state.search.getResult();
     searchView.renderResults(state.search.result);
   }
