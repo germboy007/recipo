@@ -1,10 +1,12 @@
-import {Search} from './models/Search';
+import Search from './models/Search';
+import Recipe from './models/Recipe';
 import * as searchView from './views/searchView';
 import { elements, renderLoader, clearLoader } from './views/base';
 
 // Global State of the App
 const state = {};
 
+// SEARCH CONTROLLER
 const controlSearch = async() => {
   const query = searchView.getInput();
   if(query){
@@ -31,3 +33,8 @@ elements.searchResPages.addEventListener('click', event => {
       searchView.renderResults(state.search.result, goToPage);
     }
 });
+
+//RECIPE CONTROLLER
+const r = new Recipe(46956);
+r.getRecipe();
+console.log(r);
