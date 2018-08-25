@@ -23,5 +23,11 @@ elements.searchForm.addEventListener('submit', event => {
   controlSearch();
 });
 
-const testvar = new Search('pizza');
-testvar.getResult();
+elements.searchResPages.addEventListener('click', event => {
+    const btn = event.target.closest('.btn-inline')
+    if(btn){
+      const goToPage = parseInt(btn.dataset.goto, 10);
+      searchView.clearResults();
+      searchView.renderResults(state.search.result, goToPage);
+    }
+});
