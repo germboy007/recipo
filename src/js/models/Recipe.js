@@ -17,7 +17,18 @@ export default class Recipe {
       
     } catch (error) {
       console.log(error);
+      alert('Something went wrong');
     }
+  }
+
+  calcTime() {
+    const numIng = this.this.ingredients.length;
+    const periods = Math.ceil(numIng / 3);
+    this.time = periods * 15;
+  }
+
+  calcServings(){
+    this.servings = 4;
   }
 
 }
