@@ -95,6 +95,7 @@ elements.shopping.addEventListener('click', e => {
 
 // TESTING
 state.likes = new Likes();
+likesView.toggleLikeMenu(state.likes.getNumLikes());
 
 // LIKE CONTROLLER
 const controlLike = () => {
@@ -117,6 +118,7 @@ const controlLike = () => {
     likesView.toggleLikeBtn(false);
     console.log(state.likes);
   }
+  likesView.toggleLikeMenu(state.likes.getNumLikes());
 };
 
 // Handling recipe button events
