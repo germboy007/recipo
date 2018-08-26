@@ -111,12 +111,11 @@ const controlLike = () => {
     );
 
     likesView.toggleLikeBtn(true);
-
-    console.log(state.likes);
+    likesView.renderLike(newLike);
   } else {
     state.likes.deleteLike(currentID);
     likesView.toggleLikeBtn(false);
-    console.log(state.likes);
+    likesView.deleteLike(currentID);
   }
   likesView.toggleLikeMenu(state.likes.getNumLikes());
 };
